@@ -1,0 +1,38 @@
+{
+  "name": "wideholy-embed",
+  "version": "1.0.0",
+  "description": "Embed WideHoly scripture widgets on any website. Lightweight (~5KB gzipped), zero dependencies, Shadow DOM isolation, 3 themes (light/dark/sepia).",
+  "main": "dist/embed.min.js",
+  "module": "dist/embed.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "multi",
+    "embed",
+    "widget",
+    "scripture",
+    "wideholy",
+    "wideholy.com",
+    "verse",
+    "api",
+    "shadow-dom",
+    "zero-dependencies"
+  ],
+  "homepage": "https://widget.wideholy.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dobestan/wideholy-embed"
+  },
+  "bugs": {
+    "url": "https://github.com/dobestan/wideholy-embed/issues"
+  },
+  "license": "MIT",
+  "author": "WideHoly <hello@wideholy.com>",
+  "publishConfig": {
+    "access": "public"
+  }
+}
