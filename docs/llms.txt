@@ -1,21 +1,50 @@
 # WideHoly Embed Widget
 
-> Embeddable WideHoly widgets for any website. Zero dependencies, Shadow DOM isolation, 4 themes (light/dark/sepia/auto).
+> Scripture platform. Embeddable widgets for any website. Zero dependencies, Shadow DOM isolation.
 
 ## Quick Start
 
-Add to any HTML page:
-- Script: <script src="https://cdn.jsdelivr.net/npm/wideholy-embed@1/dist/embed.min.js"></script>
+```html
+<script src="https://cdn.jsdelivr.net/npm/wideholy-embed@1/dist/embed.min.js"></script>
+<div data-wideholy="verse" data-slug="example"></div>
+```
+
+## Available Widget Types (6)
+
+- verse: `data-wideholy="verse"`
+- chapter: `data-wideholy="chapter"`
+- compare: `data-wideholy="compare"`
+- person: `data-wideholy="person"`
+- search: `data-wideholy="search"`
+- votd: `data-wideholy="votd"`
+
+## Customization
+
+- **Themes**: light, dark, sepia, auto (follows system preference)
+- **Sizes**: compact (280px), default (420px), large (720px)
+- **Styles**: modern, classic
+
+```html
+<div data-wideholy="verse" data-slug="example"
+     data-theme="auto" data-size="compact" data-style-variant="modern"></div>
+```
+
+## Integration Methods
+
+1. **Script tag** (recommended): `<script src="https://cdn.jsdelivr.net/npm/wideholy-embed@1/dist/embed.min.js"></script>`
+2. **iframe**: `https://wideholy.com/iframe/entity/{slug}/`
+3. **oEmbed**: `https://wideholy.com/oembed?url={page_url}&format=json`
+4. **Badge**: `https://wideholy.com/badge/site.svg`
 
 ## Links
 
 - Main site: https://wideholy.com
 - Widget docs: https://widget.wideholy.com
-- npm: https://www.npmjs.com/package/wideholy-embed
-- GitHub: https://github.com/dobestan/wideholy-embed
-- API: https://wideholy.com/developers/
+- API documentation: https://wideholy.com/developers/
+- npm package: https://www.npmjs.com/package/wideholy-embed
+- GitHub: https://github.com/fyipedia/wideholy-embed
 
-## WideHoly Widget Family
+## WideHoly Widget Network
 
 - [WideBible Widget](https://widget.widebible.com)
 - [WideQuran Widget](https://widget.widequran.com)
