@@ -5,3 +5,4 @@ Allow: /
 # Main site: https://wideholy.com
 # Widget docs: https://widget.wideholy.com
 # npm: https://www.npmjs.com/package/wideholy-embed
+Sitemap: https://widget.wideholy.com/sitemap.xml

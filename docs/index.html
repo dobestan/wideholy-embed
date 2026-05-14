@@ -28,7 +28,60 @@
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"WideHoly Embed Widget","url":"https://widget.wideholy.com","applicationCategory":"ReferenceApplication","operatingSystem":"Web","description":"Embed WideHoly Scripture widgets on any website. Zero dependencies, Shadow DOM isolation.","publisher":{"@type":"Organization","name":"WideHoly","url":"https://wideholy.com"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WideHoly","item":"https://wideholy.com"},{"@type":"ListItem","position":2,"name":"Widget Docs"}]},{"@type":"SoftwareSourceCode","name":"wideholy-embed","codeRepository":"https://github.com/dobestan/wideholy-embed","programmingLanguage":"TypeScript","runtimePlatform":"Browser","license":"https://opensource.org/licenses/MIT"}]}
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "WideHoly Embed Widget Family",
+        "url": "https://widget.wideholy.com",
+        "applicationCategory": "ReferenceApplication",
+        "operatingSystem": "Web",
+        "description": "Embed sacred-text widgets on any website. WideHoly umbrella covers Bible, Quran, Torah, Bhagavad Gita, and Sutras. Zero dependencies, Shadow DOM isolation, 3 themes (light/dark/sepia), free CDN.",
+        "publisher": {"@type": "Organization", "name": "WideHoly", "url": "https://wideholy.com", "logo": "https://wideholy.com/static/favicon.ico"},
+        "isPartOf": {"@type": "WebSite", "name": "WideHoly", "url": "https://wideholy.com"}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "WideHoly", "item": "https://wideholy.com"},
+          {"@type": "ListItem", "position": 2, "name": "Widget Docs"}
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "WideHoly Sacred Text Sites",
+        "numberOfItems": 6,
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "WideBible", "url": "https://widebible.com"},
+          {"@type": "ListItem", "position": 2, "name": "WideQuran", "url": "https://widequran.com"},
+          {"@type": "ListItem", "position": 3, "name": "WideTorah", "url": "https://widetorah.com"},
+          {"@type": "ListItem", "position": 4, "name": "WideGita", "url": "https://widegita.com"},
+          {"@type": "ListItem", "position": 5, "name": "WideSutra", "url": "https://widesutra.com"},
+          {"@type": "ListItem", "position": 6, "name": "WideHoly Hub", "url": "https://wideholy.com"}
+        ]
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": "wideholy-embed",
+        "codeRepository": "https://github.com/dobestan/wideholy-embed",
+        "programmingLanguage": "TypeScript",
+        "runtimePlatform": "Browser",
+        "license": "https://opensource.org/licenses/MIT"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Which sacred texts does WideHoly cover?", "acceptedAnswer": {"@type": "Answer", "text": "Five major scriptural traditions: WideBible for the Christian Bible (66 books, multiple translations), WideQuran for the Quran (114 surahs, multiple translations and tafsir), WideTorah for the Hebrew Torah and Talmudic study materials, WideGita for the Bhagavad Gita with chapter commentaries, and WideSutra for Buddhist sutras and collections. Plus WideHoly as the umbrella hub for cross-religion comparison."}},
+          {"@type": "Question", "name": "How accurate are the translations?", "acceptedAnswer": {"@type": "Answer", "text": "WideHoly serves public-domain and Creative Commons translations from authoritative sources: KJV/ASV/WEB for the Bible, Sahih International/Pickthall/Yusuf Ali for the Quran, JPS 1917/Robert Alter for the Torah, multiple Sanskrit-to-English Gita translations, and academic translations of major Buddhist sutras. Side-by-side comparison supported."}},
+          {"@type": "Question", "name": "Can I embed a single verse vs full chapter?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The verse widget accepts data-ref=\"John 3:16\" or data-ref=\"2:255\" (Quran). The chapter widget accepts data-ref=\"Genesis 1\" or data-ref=\"Quran 1\". The compare widget shows two passages side-by-side across traditions (data-a + data-b)."}},
+          {"@type": "Question", "name": "Does WideHoly support multiple languages?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each domain ships translations in 15 languages (EN, KO, JA, ZH-HANS, HI, AR, ES, FR, DE, PT, RU, ID, VI, TR, TH). Hindi/Arabic/Thai render with proper script support. RTL direction handled automatically for Arabic and Hebrew."}},
+          {"@type": "Question", "name": "Is there a Verse of the Day widget?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The votd widget rotates daily based on date, with separate calendars per tradition (Christian liturgical year, Islamic Hijri calendar, Hebrew calendar, Hindu calendar, Buddhist liturgical year). Same widget syntax: <div data-wideholy=\"votd\"></div>."}},
+          {"@type": "Question", "name": "Why a family of 6 sites instead of one scripture portal?", "acceptedAnswer": {"@type": "Answer", "text": "Each tradition has unique structural needs: WideBible uses book→chapter→verse, WideQuran uses surah→ayah with juz divisions, WideTorah includes Talmudic tractates, WideGita has 18 chapters with multi-translator commentary, WideSutra organizes by collection (Pali Canon, Mahayana, Vajrayana). Dedicated domains enable proper SEO + scripture-specific URL patterns (e.g., widequran.com/1/255/ for Ayatul Kursi)."}}
+        ]
+      }
+    ]
+  }
   </script>
 
   <!-- Tailwind CSS CDN -->
@@ -435,6 +488,86 @@ import 'wideholy-embed';
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SACRED TEXT FAMILY ──────────────────────────── -->
+  <section id="family" class="py-16 sm:py-20 bg-gradient-to-br from-violet-50 to-white border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900">The WideHoly Sacred Text Family</h2>
+      <p class="mt-3 text-center text-gray-600 max-w-2xl mx-auto">Six domains for the world's major scriptural traditions. Each authoritative for its tradition with dedicated URL structure.</p>
+
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background:#1E40AF">B</div><div><h3 class="font-bold text-lg"><a href="https://widebible.com" class="accent-text hover:underline">WideBible</a></h3><p class="text-xs text-gray-500">widebible.com</p></div></div>
+          <p class="text-sm text-gray-600">Christian Bible · 66 books · KJV/ASV/WEB · <a href="https://widebible.com/people/" class="accent-text hover:underline">2K+ figures</a> · <a href="https://widebible.com/places/" class="accent-text hover:underline">places</a> · <a href="https://widebible.com/topics/" class="accent-text hover:underline">topics</a> · <a href="https://widebible.com/glossary/" class="accent-text hover:underline">glossary</a> · <a href="https://widebible.com/timeline/" class="accent-text hover:underline">timeline</a>.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <a href="https://widget.widebible.com" target="_blank" rel="noopener" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">Widget Docs ↗</a>
+            <a href="https://widebible.com/developers/" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">API</a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background:#059669">Q</div><div><h3 class="font-bold text-lg"><a href="https://widequran.com" class="accent-text hover:underline">WideQuran</a></h3><p class="text-xs text-gray-500">widequran.com</p></div></div>
+          <p class="text-sm text-gray-600">Quran · 114 surahs · Sahih International/Pickthall/Yusuf Ali · <a href="https://widequran.com/people/" class="accent-text hover:underline">prophets</a> · <a href="https://widequran.com/topics/" class="accent-text hover:underline">topics</a> · <a href="https://widequran.com/hadith/" class="accent-text hover:underline">hadith</a> · <a href="https://widequran.com/tafsir/" class="accent-text hover:underline">tafsir</a> · <a href="https://widequran.com/juz/" class="accent-text hover:underline">juz</a>.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <a href="https://widget.widequran.com" target="_blank" rel="noopener" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">Widget Docs ↗</a>
+            <a href="https://widequran.com/developers/" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">API</a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background:#7C2D12">T</div><div><h3 class="font-bold text-lg"><a href="https://widetorah.com" class="accent-text hover:underline">WideTorah</a></h3><p class="text-xs text-gray-500">widetorah.com</p></div></div>
+          <p class="text-sm text-gray-600">Hebrew Torah · JPS 1917 · Robert Alter · <a href="https://widetorah.com/parashot/" class="accent-text hover:underline">parashot</a> · <a href="https://widetorah.com/holidays/" class="accent-text hover:underline">holidays</a> · <a href="https://widetorah.com/figures/" class="accent-text hover:underline">figures</a> · <a href="https://widetorah.com/talmud/" class="accent-text hover:underline">Talmud tractates</a>.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <a href="https://widget.widetorah.com" target="_blank" rel="noopener" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">Widget Docs ↗</a>
+            <a href="https://widetorah.com/developers/" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">API</a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background:#EA580C">G</div><div><h3 class="font-bold text-lg"><a href="https://widegita.com" class="accent-text hover:underline">WideGita</a></h3><p class="text-xs text-gray-500">widegita.com</p></div></div>
+          <p class="text-sm text-gray-600">Bhagavad Gita · 18 chapters · <a href="https://widegita.com/chapters/" class="accent-text hover:underline">chapter commentary</a> · <a href="https://widegita.com/deities/" class="accent-text hover:underline">deities</a> · <a href="https://widegita.com/concepts/" class="accent-text hover:underline">concepts</a> · <a href="https://widegita.com/upanishads/" class="accent-text hover:underline">Upanishads</a> · <a href="https://widegita.com/yoga-sutras/" class="accent-text hover:underline">Yoga Sutras</a>.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <a href="https://widget.widegita.com" target="_blank" rel="noopener" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">Widget Docs ↗</a>
+            <a href="https://widegita.com/developers/" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">API</a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-xl border border-gray-200 bg-white hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background:#0891B2">S</div><div><h3 class="font-bold text-lg"><a href="https://widesutra.com" class="accent-text hover:underline">WideSutra</a></h3><p class="text-xs text-gray-500">widesutra.com</p></div></div>
+          <p class="text-sm text-gray-600">Buddhist Sutras · Pali Canon · Mahayana · Vajrayana · <a href="https://widesutra.com/collections/" class="accent-text hover:underline">collections</a> · <a href="https://widesutra.com/figures/" class="accent-text hover:underline">figures</a> · <a href="https://widesutra.com/concepts/" class="accent-text hover:underline">concepts</a> · <a href="https://widesutra.com/topics/" class="accent-text hover:underline">topics</a>.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <a href="https://widget.widesutra.com" target="_blank" rel="noopener" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">Widget Docs ↗</a>
+            <a href="https://widesutra.com/developers/" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">API</a>
+          </div>
+        </article>
+
+        <article class="p-6 rounded-xl border-2 border-dashed border-violet-300 bg-violet-50 hover:shadow-lg transition">
+          <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg font-bold" style="background:linear-gradient(135deg,#8B5CF6,#A855F7)">∞</div><div><h3 class="font-bold text-lg"><a href="https://wideholy.com" class="accent-text hover:underline">WideHoly Umbrella</a></h3><p class="text-xs text-gray-500">wideholy.com · Cross-religion comparison</p></div></div>
+          <p class="text-sm text-gray-600">Cross-tradition comparison · <a href="https://wideholy.com/topics/" class="accent-text hover:underline">topics</a> across all 5 traditions · <a href="https://wideholy.com/developers/" class="accent-text hover:underline">unified API</a>.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <a href="https://widget.wideholy.com" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">This page</a>
+            <a href="https://widget.fyipedia.com" target="_blank" rel="noopener" class="px-2 py-1 rounded bg-violet-100 text-violet-700 hover:bg-violet-200">All FYI Hubs ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─────────────────────────────────────────── -->
+  <section id="faq" class="py-16 sm:py-20 bg-white border-t border-gray-100">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-900">FAQ</h2>
+      <p class="mt-3 text-center text-gray-600">Common questions about embedding sacred-text widgets.</p>
+      <div class="mt-10 space-y-4">
+        <details class="p-5 rounded-lg border border-gray-200 bg-white"><summary class="font-semibold cursor-pointer text-gray-900">Which sacred texts does WideHoly cover?</summary><p class="mt-3 text-gray-600 text-sm">Five major scriptural traditions: <a href="https://widebible.com" class="accent-text hover:underline">WideBible</a> for the Christian Bible (66 books), <a href="https://widequran.com" class="accent-text hover:underline">WideQuran</a> for the Quran (114 surahs + tafsir), <a href="https://widetorah.com" class="accent-text hover:underline">WideTorah</a> for the Hebrew Torah and Talmudic study, <a href="https://widegita.com" class="accent-text hover:underline">WideGita</a> for the Bhagavad Gita, <a href="https://widesutra.com" class="accent-text hover:underline">WideSutra</a> for Buddhist sutras. Plus <a href="https://wideholy.com" class="accent-text hover:underline">WideHoly</a> as the umbrella hub.</p></details>
+        <details class="p-5 rounded-lg border border-gray-200 bg-white"><summary class="font-semibold cursor-pointer text-gray-900">How accurate are the translations?</summary><p class="mt-3 text-gray-600 text-sm">Public-domain and CC translations from authoritative sources: KJV/ASV/WEB for the Bible (<a href="https://widebible.com/translations/" class="accent-text hover:underline">translations list</a>), Sahih International/Pickthall/Yusuf Ali for the Quran (<a href="https://widequran.com/translations/" class="accent-text hover:underline">translations list</a>), JPS 1917 and Robert Alter for the Torah (<a href="https://widetorah.com/translations/" class="accent-text hover:underline">translations list</a>). Side-by-side comparison supported.</p></details>
+        <details class="p-5 rounded-lg border border-gray-200 bg-white"><summary class="font-semibold cursor-pointer text-gray-900">Can I embed a single verse or full chapter?</summary><p class="mt-3 text-gray-600 text-sm">Yes. The verse widget accepts <code class="bg-gray-100 px-1 rounded">data-ref="John 3:16"</code> or <code class="bg-gray-100 px-1 rounded">data-ref="2:255"</code> (Quran Ayatul Kursi). The chapter widget accepts <code class="bg-gray-100 px-1 rounded">data-ref="Genesis 1"</code>. The compare widget shows two passages side-by-side across traditions.</p></details>
+        <details class="p-5 rounded-lg border border-gray-200 bg-white"><summary class="font-semibold cursor-pointer text-gray-900">Does WideHoly support multiple languages?</summary><p class="mt-3 text-gray-600 text-sm">Yes. Each domain ships translations in <strong>15 languages</strong> (EN, KO, JA, ZH-HANS, HI, AR, ES, FR, DE, PT, RU, ID, VI, TR, TH). Hindi, Arabic, and Thai render with proper script support. RTL direction handled automatically for Arabic and Hebrew.</p></details>
+        <details class="p-5 rounded-lg border border-gray-200 bg-white"><summary class="font-semibold cursor-pointer text-gray-900">Is there a Verse of the Day widget?</summary><p class="mt-3 text-gray-600 text-sm">Yes. The votd widget rotates daily based on date, with separate calendars per tradition (Christian liturgical year, Islamic Hijri calendar, Hebrew calendar, Hindu calendar, Buddhist liturgical year). Same syntax: <code class="bg-gray-100 px-1 rounded">&lt;div data-wideholy="votd"&gt;&lt;/div&gt;</code>.</p></details>
+        <details class="p-5 rounded-lg border border-gray-200 bg-white"><summary class="font-semibold cursor-pointer text-gray-900">Why 6 sites instead of one scripture portal?</summary><p class="mt-3 text-gray-600 text-sm">Each tradition has unique structural needs: <a href="https://widebible.com" class="accent-text hover:underline">WideBible</a> uses book→chapter→verse, <a href="https://widequran.com" class="accent-text hover:underline">WideQuran</a> uses surah→ayah with juz divisions, <a href="https://widetorah.com" class="accent-text hover:underline">WideTorah</a> includes Talmudic tractates, <a href="https://widegita.com" class="accent-text hover:underline">WideGita</a> has 18 chapters with multi-translator commentary, <a href="https://widesutra.com" class="accent-text hover:underline">WideSutra</a> organizes by collection. Dedicated domains enable scripture-specific URL patterns and proper SEO.</p></details>
       </div>
     </div>
   </section>
